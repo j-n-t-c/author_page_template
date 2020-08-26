@@ -34,8 +34,21 @@ p {
 }
 a{
     text-decoration: none;
-    color: rgb(221, 149, 149);
+    color: black;
     font-size: 15px;
+}
+span {
+    font-size: 2.2vw;
+    color: rgb(221, 149, 149);
+}
+h3 {
+    font-size: 3.3vw;
+    font-family: zillabold;
+    padding: 30px 0px 0px 0px;
+}
+h4 {
+    font-size: 2.3vw;
+    font-family: zillabold;
 }
 /*default, small phones*/
 .wrapper {
@@ -64,7 +77,7 @@ a{
                 width: auto;
                 max-width: 150px;
             }
-    menu{
+    menu {
     grid-area: m;
     background-color: ivory;
     box-shadow: 5px 5px 10px #bdbdbd;
@@ -90,12 +103,70 @@ a{
     grid-area: c;
     background-color: rgba(125, 255, 194, 0);
     box-shadow: 5px 5px 10px #bdbdbd;
-    padding: 3vw 8vw;
+    padding: 4vw 6vw;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     }
-    main p {
-        text-indent: 25px;
-    }
+        /*about page main content*/
+        .main-about {
+            display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 7vw 6vw;
+        }
+        .main-about p {
+            width: 80%;
+            text-indent: 25px;
+            margin: 0.75vw;
+        }
+        /*work page main content*/
+        .main-work {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        .main-work li {
+            margin: 4vw 0vw 4vw 0vw;
+        }
+        .main-work a{
+            font-size: 5vw;
+        }
+        /*events page main content*/
+        .main-events ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            }
+            .main-events li {
+                margin: 1vw 0vw 1vw 0vw;
+            }
+            .main-events li p{
+                font-size: 3vw;
+            }
+                    /*contact page main content*/
+        .main-contact {
+            display: flex;
+            align-items: flex-start;
+            }
+            .main-contact p {
+                width: 80%;
+                text-indent: 25px;
+                margin: 0.75vw;
+                font-size: 2.8vw;
+            }
+            .contact-form input {
+                height: auto;
+                max-height: 20px;
+                width: 25vw;
+                padding: 15px;
+            }
+            .contact-form p {
+                text-indent: 25px;
+                margin: 0.75vw;
+                width: 100%;
+            }
     footer{
     grid-area: f;
     background-color: ivory;
@@ -133,6 +204,10 @@ a{
         .sidemenu li{
             margin: 0px 25px 3px 25px;
         }
+                /*work page main content*/
+                .main-work a{
+                    font-size: 3vw;
+                }
 } 
 /*medium tablets*/     
 @media (min-width: 600px) and (max-width: 767px) {
@@ -145,6 +220,13 @@ a{
         .sidemenu li a{
             font-size: 4vw;
         }
+        main p {
+            font-size: 3vw;
+        }
+                /*work page main content*/
+                .main-work a {
+                    font-size: 3vw;
+                }
 } 
 /*bigger tablets  ~~~~~CHANGE GRID~~~~~     */     
 @media (min-width: 768px){
@@ -190,6 +272,26 @@ a{
         main p {
             font-size: 2.2vw;
         }
+        /*work page main content*/
+        .main-work a{
+            font-size: 3vw;
+        }
+    @media (min-height: 1024px) {
+        main p {
+            font-size: 3.2vw;
+        }
+        .main-work a{
+            font-size: 4vw;
+        }
+    }
+    @media (min-height: 1280px) {
+        main p {
+            font-size: 3.5vw;
+        }
+        .main-work a{
+            font-size: 4vw;
+        }
+    }
 }
 /*huge tablets, desktop ~~~~~fixing menu spacing and font size regulation~~~~~     */     
 @media (min-width: 950px){ 
@@ -203,6 +305,11 @@ a{
         color: black;
         font-family: zilla;
         font-size: 32px;
+    }
+    @media (min-height: 1280px) {
+        main p {
+            font-size: 3.3vw;
+        }
     }
 }
 /*hugerrrrr tablets, desktop ~~~~~fixing menu spacing and font size regulation~~~~~     */     

@@ -8,17 +8,19 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>
-                    <img src="/img/stephanlogo260by100.png" class="logo" alt="Stephan Viau">
-        </header>
-        <menu>
-            <ul class="sidemenu">
-                <li><a href="/index.html">about</a></li>
-                <li><a href="/work.html">work</a></li>
-                <li><a href="/events.html">events</a></li>
-                <li><a href="/contact.html">contact</a></li>
-            </ul>
-        </menu>
+        <div class="bigheaderwrapper">
+            <header>
+                        <img src="/img/stephanlogo260by100.png" class="logo" alt="Stephan Viau">
+            </header>
+            <menu>
+                <ul class="sidemenu">
+                    <li><a href="/index.html">about</a></li>
+                    <li><a href="/work.html">work</a></li>
+                    <li><a href="/events.html">events</a></li>
+                    <li><a href="/contact.html">contact</a></li>
+                </ul>
+            </menu>
+        </div>
         <main class="main-contact">
             <div class="contact-list">
                 <h3>event/workshop inquiries:</h3>
@@ -32,13 +34,20 @@
             </div>
             <div class="contact-form">
                 <h3>everything else:</h3>
-                <p>name</p>
-                <input type="text" class="input-name">
-                <p>e-mail</p>
-                <input type="text" class="input-email">
-                <p>questions or comments</p>
-                <input type="text" class="input-comments">
-                <div class="submitdiv"><button type="submit" class="submit-button"><p>send</p></button></div>
+                <div class="form-box">
+                    <label for="input-name">name</label>
+                    <input type="text" class="input-name" required>
+                </div>
+                <div class="form-box">
+                    <label for="input-email">email</label>
+                    <input type="email" class="input-email" required>
+                </div>
+                <div class="form-box">
+                    <label for="input-comments">questions or comments</label>
+                    <input type="text" class="input-comments" required>
+                    <div class="submitdiv">
+                        <button type="submit" class="submit-button"><p>send</p></button>
+                    </div>
             </div>
         </main>
         <footer>

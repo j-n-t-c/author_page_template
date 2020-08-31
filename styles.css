@@ -30,15 +30,18 @@ ul {
     list-style: none;
 }
 p {
-    font-size: 4.5vw;
+    font-size: 4vw;
 }
 a{ /*links are found in menu and work.html*/
     font-size: 4vw;
     text-decoration: none;
     color: black;
 }
-span { /*used in work.html to break publishing dates*/
-    font-size: 2vw;
+.current { /*active page*/
+    color: rgb(221, 149, 149);
+}
+span { /*used as text for dates/locations*/
+    font-size: 3.5vw;
     color: rgb(221, 149, 149);
 }
 h3 {
@@ -50,51 +53,64 @@ input {
     background-color: rgba(255, 255, 255, 0.61);
     box-shadow: 2px 2px 5px #bdbdbd;
     height: 4vh;
-    min-height: 15px;
+    min-height: 20px;
     width: 75vw;
     max-width: 350px;
 }
-
+label {
+    font-size: 2vw;
+    display: block;
+}
 /*default, small phones*/               /*~~~~~  PAGE DEFAULTS ~~~~~*/
 .wrapper {                                        /*FULL PAGE GRID*/
     height: 100%;
     grid-gap: 8px;
     display: grid;
     grid-template-columns: minmax(auto, 1fr);
-    grid-template-rows: 0.8fr 40px 5fr 20px;
+    grid-template-rows: minmax(auto, 0.3fr) 5fr minmax(20px, 0.1fr);
     grid-template-areas:
-    "h"
-    "m"
+    "b"
     "c"
     "f"
     }
+.bigheaderwrapper {
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: ivory;
+    box-shadow: 5px 5px 10px #bdbdbd;
+    padding: 10px;
+}
 header {                                           /*HEADER*/
     grid-area: h;
     background-color: ivory;
-    box-shadow: 5px 5px 10px #bdbdbd;
+    box-shadow: none;
     display: flex;
     justify-content: center;
     align-items: center;
     }
 .logo {                                            /*LOGO*/
-                margin: 5px;
-                height: auto;
-                width: auto;
-                max-width: 130px;
-            }
+        margin: 5px;
+        height: auto;
+        width: auto;
+        max-width: 150px;
+        background-color:transparent
+    }
 menu {                                             /*MENU*/
     grid-area: m;
     background-color: ivory;
-    box-shadow: 5px 5px 10px #bdbdbd;
+    box-shadow: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 10px;
     }
 .sidemenu {
     display: flex;
 }
 .sidemenu li{
-    margin: 0px 15px 3px 15px;
+    margin: 0px 15px 0px 15px;
 }
 .sidemenu a:hover {
     color: rgb(221, 149, 149);
@@ -128,7 +144,6 @@ align-items: flex-start;
 }
 .main-work li {
     margin: 1vw 0vw 1vw 0vw;
-    margin-bottom: -5px;
 }
                                                     /*WORK.html*/
 .main-events {
@@ -148,8 +163,14 @@ display: flex;
 justify-content: flex-start;
 align-items: flex-start;
 }
+.main-contact h3 {
+    padding: 5px 0px;
+}
+.contact-list {
+margin: 20px 0px;
+}
 .input-comments {
-    min-height: 60px;
+    min-height: 80px;
 }
 .submit-button {
     background-color:rgb(221, 149, 149);
@@ -168,36 +189,42 @@ background-color: ivory;
 box-shadow: 5px 5px 10px #bdbdbd;
 display: flex;
 justify-content: space-between;
+align-items: center;
+}
+footer p {
+    font-size: 3vw;
+    margin: 0px 10px 0px 10px;
+    color: rgba(0, 0, 0, 0.74);
 }
 /*VERY small media*/
 @media (max-width: 319px) {
-    .sidemenu li{
-        margin: 0px 12px 3px 12px;
+    .wrapper {
+        grid-template-rows: minmax(auto, 110px) 5fr minmax(20px, 0.4vw);
+    }
+    .bigheaderwrapper {
+        padding: 0px;
     }
     span {
         font-size: 5vw;
+    }
+    .logo {
+        margin: 0px;
     }
 }
 /*bigger phones*/
 @media (min-width: 321px) and (max-width: 449px) {
     .logo {
-        max-width: 160px;
-    }
-    .sidemenu li{
-        margin: 0px 20px 3px 20px;
+        max-width: 180px;
     }
     span {
-        padding: 3px;
-        font-size: 5vw;
+        padding: 5px 0;
+        font-size: 3.5vw;
     }
 }
 /*real big phones, smaller tablets*/     
 @media (min-width: 450px) and (max-width: 599px) {
     .logo {
-        max-width: 220px;
-    }
-    .sidemenu li{ /*needed to push down li a bit*/
-        margin: 3px 25px 3px 25px;
+        max-width: 180px;
     }
 } 
 /*medium tablets*/     
@@ -211,20 +238,57 @@ justify-content: space-between;
 } 
 /*bigger tablets  ~~~~~CHANGE FULL PAGE GRID~~~~~     */     
 @media (min-width: 768px) {
-    header {
-        justify-content: flex-start;
-    }    
-    .logo {
-        margin-left: 5vw;
-        max-width: 230px;
+    p {
+        font-size: 2vw; /*smaller font on bigger devices, it grows too fast*/
     }
-    menu{
+    h3 {
+        font-size: 3vw;
+    }
+    a {
+        font-size: 2.5vw;
+    }
+    main a {
+        font-size: 2vw;
+    }
+    span {
+        font-size: 1.8vw;
+    }
+    menu {
         display: flex;
-        margin-top: -150px;
-        background-color: transparent;
-        box-shadow: 0px 0px 0px;
         justify-content: flex-end;
+        align-items: flex-end;
+    }
+    .wrapper {                                        /*change grid with bigheader div*/
+        height: 100%;
+        grid-gap: 8px;
+        display: grid;
+        grid-template-columns: minmax(auto, 1fr);
+        grid-template-rows: minmax(30px, 0.6fr) 40px 5fr 0.3fr;
+        grid-template-areas:
+        "b b"
+        "b b"
+        "c c"
+        "f f"
         }
+    .bigheaderwrapper {
+        grid-area: b;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        background-color: ivory;;
+        box-shadow: 5px 5px 10px #bdbdbd;
+        padding: 0px 20px;
+    }
+    header, menu {
+        box-shadow: none;
+    }
+    .logo {
+        max-width: 240px;
+    }
+    menu a {                            /*link font-size scale to match logo*/
+        font-size: 3vw;
+    }
     .sidemenu {
         padding: 0px 0vw;
         display: flex;
@@ -236,25 +300,44 @@ justify-content: space-between;
     .main-contact {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-around;
         align-items: flex-start;
-        }   
-    @media (min-height: 1024px) { /*for big tablets in portrait display, reverts to default but bigger elements*/
-        .main-contact {
-            flex-direction: column;
-            align-items: center;
         }
-        /* .main-work a{
-            font-size: 4vw;
-        } */
+    .contact-list {
+        margin: 20px 0px;
+        }
+    .contact-form {
+        margin: 20px 0px;
+        }    
+    footer p {
+        font-size: 1.5vw;
     }
+    @media (max-height: 650px){
+        .wrapper {
+            grid-template-rows: minmax(30px, 0.9fr) 40px 5fr 0.3fr;
+        }
+    } 
+    @media (min-height: 1024px) { /*for big tablets in portrait display, reverts to default but bigger elements*/
+        p {
+            font-size: 3.2vw; /*fonts need to be a bit bigger for portrait display tablets*/
+        }
+        h3 {
+            font-size: 4vw;
+        }
+        a {
+            font-size: 3.2vw;
+        }
+        span {
+            font-size: 2.5vw;
+        }
     @media (min-height: 1280px) {
         .main-work ul{
             width: 70%;
         }
-        /* .main-work a {
-            font-size: 4vw;
-        } */
+        .main-contact {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
 /*huge tablets, desktop*/     
@@ -262,29 +345,37 @@ justify-content: space-between;
     .sidemenu li{
         margin: 0vw 3vw 0vw 3vw;
     }
-    /* .sidemenu a {
-        color: black;
-        font-family: zilla;
-        font-size: 32px;
-    } */
-    /* .main-work a {
-        font-size: 2.5vw;
-    } */
-    @media (min-height: 1280px) {
-        .main-work ul{
-            width: 70%;
-        }
-        /* .main-work a {
-            font-size: 4vw;
-        } */
-    }
 }
 /*hugerrrrr tablets, desktop*/     
 @media (min-width: 1300px){ 
+    a {
+        font-size: 30px;
+    }
+    p {
+        font-size: 2.8vw;
+    }
+    h3 {
+        font-size: 2.5vw;
+    }
+    span {
+        font-size: 1.5vw;
+    }
     .sidemenu li{
         margin: 0vw 3.2vw 0vw 3.2vw;
     }
-    /* .main-work a {
-        font-size: 2vw;
-    } */
+}
+/*ridic big desktop, beyond tablet size to push contact form back to horizontal*/
+@media (min-width: 1500px) and (min-height: 1281px) {
+    a {
+        font-size: 40px;
+    }
+    span {
+        font-size: 35px;
+    }
+    .main-contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        } 
 }

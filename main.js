@@ -61,4 +61,4 @@ function navHighlight(elem, home, active) {
             }
         }
     }
-navHighlight('.menu a', 'index.html', 'current'); /* menu link selector, home page, highlight class */
+navHighlight('.sidemenu a', 'index.html', 'current'); /* menu link selector, home page, highlight class */
